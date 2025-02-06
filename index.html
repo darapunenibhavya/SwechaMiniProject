@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="Enter your mobile number">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" placeholder="Enter your full address"></textarea>
+
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" accept="image/*" required>
+
+        <label for="password">Password:</label>
+        <span class="hint">Password must be 8 characters max, include one uppercase letter, and one special character.</span>
+        <input type="password" id="password" placeholder="Set the password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+        <span id="passwordError" class="error-message"></span>
+
+        <label for="captcha">Enter CAPTCHA: <span id="captchaText"></span></label>
+        <input type="text" id="captcha" placeholder="Enter the above captcha">
+        <button type="button" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+        <span id="captchaError" class="error-message"></span>
+        
+        <input type="submit" value="Register" class="submit-button">
+    </form>
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
